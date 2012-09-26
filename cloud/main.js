@@ -63,7 +63,8 @@ exports.cacheCall = function(params, callback) {
     var bypass = params.bypass !== undefined ? params.bypass : false;
   
     $fhserver.cache({act:'load', key: 'time'}, function (err, cachedTime) {
-      
+      console.log(err);
+      conole.log("err : " + JSON.stringify(err));
       if (err) return callback(err);    
       var currentTime = Date.now();
       console.log("cachedTime: " + cachedTime);
