@@ -40,7 +40,7 @@ var cache = {
       cache_cached.text(from_cache);
       cache_output.text(time);
     }, function(code,errorprops,params) {
-      alert('Error in cacheCall: code: ' + code + " errorprops: " + errorprops + " params: " + params);
+      alert('Error in cacheCall: code: ' + code + " errorprops: " + JSON.stringify(errorprops) + " params: " + params);
     });
   },
   
