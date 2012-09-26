@@ -124,7 +124,7 @@ exports.xml2jsCall = function(params, callback) {
     "  <sub><field1>value3_1</field1><field2>value3_2</field2></sub>" +
     "</root>";
   
-  parser.parseString(xmlSample);
+  //parser.parseString(xmlSample);
   console.log("end xml2jsCall()");
   callback(undefined, {data: "BlahdeBlah"});
 };
