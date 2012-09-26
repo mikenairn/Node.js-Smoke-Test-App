@@ -112,9 +112,8 @@ exports.xml2jsCall = function(params, callback) {
   var parser = new xml2js.Parser();
   parser.addListener('end', function(result) {
     console.log("paresed xml");
-    console.log("result :: " + result);
-    console.log("result :: " + result.sub[0]);
-    return callback(undefined, {data: "BlahdeBlah"});
+    console.log("result.sub[0].field1 :: " + result.root.sub[0].field1);
+    return callback(undefined, {data: result.root.sub[0].field1});
   });
 
    var xmlSample = 
@@ -125,8 +124,6 @@ exports.xml2jsCall = function(params, callback) {
     "</root>";
   
   parser.parseString(xmlSample);
-  console.log("end xml2jsCall()");
-  callback(undefined, {data: "BlahdeBlah"});
 };
 
 exports.echoCall = function(params, callback) {
