@@ -108,20 +108,22 @@ exports.xmlCall = function(params, callback) {
 /** XML processing, using the xml2js module */
 exports.xml2jsCall = function(params, callback) {
   console.log("in xml2jsCall()");
-  //var xml2js = require('xml2js');
-  //var parser = new xml2js.Parser();
-  //parser.addListener('end', function(result) {
-//    callback(undefined, {data: result.sub[0].field1});
-//  });
+  var xml2js = require('xml2js');
+  var parser = new xml2js.Parser();
+  parser.addListener('end', function(result) {
+    console.log("paresed xml");
+    console.log("result :: " + result);
+    callback(undefined, {data: result.sub[0].field1});
+  });
 
-  //var xmlSample = 
-  //  "<root>" +
-//    "  <sub><field1>value1_1</field1><field2>value1_2</field2></sub>" +
-//    "  <sub><field1>value2_1</field1><field2>value2_2</field2></sub>" +
-//    "  <sub><field1>value3_1</field1><field2>value3_2</field2></sub>" +
-//    "</root>";
-//  parser.parseString(xmlSample);
-  callback(undefined, {echo: "Balls"});
+   var xmlSample = 
+    "<root>" +
+    "  <sub><field1>value1_1</field1><field2>value1_2</field2></sub>" +
+    "  <sub><field1>value2_1</field1><field2>value2_2</field2></sub>" +
+    "  <sub><field1>value3_1</field1><field2>value3_2</field2></sub>" +
+    "</root>";
+  parser.parseString(xmlSample);
+  console.log("end xml2jsCall()");
 };
 
 exports.echoCall = function(params, callback) {
