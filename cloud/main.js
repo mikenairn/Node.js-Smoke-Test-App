@@ -113,6 +113,7 @@ exports.xml2jsCall = function(params, callback) {
   parser.addListener('end', function(result) {
     console.log("paresed xml");
     console.log("result :: " + result);
+    console.log("result :: " + result.sub[0]);
     callback(undefined, {data: result.sub[0].field1});
   });
 
