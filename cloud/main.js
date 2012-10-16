@@ -32,7 +32,7 @@ exports.webCall = function(params, callback) {
 /* Sample $fh.feed call */
 exports.feedCall = function(params, callback) {
   var feedParams = {          
-    'link': 'http://www.straphaelscu.ie/feed',
+    'link': 'http://www.feedhenry.com/feed',
     'list-max' : 10
   };
   console.log("in feedCall");
