@@ -31,6 +31,7 @@ exports.webCall = function(params, callback) {
 
 /* Sample $fh.feed call */
 exports.feedCall = function(params, callback) {
+  console.log("exports.feedCall");
   var feedParams = {          
     'link': 'http://www.feedhenry.com/feed',
     'list-max' : 10
