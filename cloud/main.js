@@ -42,6 +42,19 @@ exports.feedCall = function(params, callback) {
   });
 };
 
+/* Sample $fh.feed call */
+exports.gzipFeedCall = function(params, callback) {
+  console.log("exports.feedCall");
+  var feedParams = {          
+    'link': 'http://www.straphaelscu.ie/feed/',
+    'list-max' : 10
+  };
+  console.log("in gzipFeedCall");
+  $fh.feed(feedParams, function(err, feedResp) {
+    callback(err, feedResp);
+  });
+};
+
 /* 'geoCall' server side REST API method.
  * Example of using a third party Node.js module, see https://github.com/feliperazeek/geonode.
  */
