@@ -2,7 +2,7 @@ var feed = {
   show: function (container) {
     feed_results = $('#feed_results').empty();
     $fh.act({
-      act:'feedCall',
+      act:'gzipFeedCall',
       req: {
         timestamp: new Date().getTime()
       }
